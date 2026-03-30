@@ -1,39 +1,24 @@
 export function motionLyte() {
-  const virtualModuleId = 'virtual:motion-lyte-init';
-  const resolvedVirtualModuleId = '\0' + virtualModuleId;
-
   return {
     name: 'vite-plugin-motion-lyte',
+    // We use the transform hook to inject the initialization code into the main entry point.
+    // This ensures that the code is processed by Vite's bundler.
     /**
-     * 
+     * @param {string} code 
      * @param {string} id 
-     * @returns {string|undefined}
      */
-    resolveId(id) {
-      if (id === virtualModuleId) {
-        return resolvedVirtualModuleId;
+    transform(code, id) {
+      // Check if this is a main entry point (common patterns)
+      if (id.endsWith('main.js') || id.endsWith('main.ts') || id.endsWith('index.js') || id.endsWith('index.ts')) {
+        // Only inject if it's not already there
+        if (!code.includes('loadAnimations')) {
+          return {
+            code: `import { loadAnimations } from 'motion-lyte.js';\nloadAnimations();\n${code}`,
+            map: null // We don't need a source map for this simple injection
+          };
+        }
       }
-    },
-    /**
-     * 
-     * @param {string} id 
-     * @returns {string|undefined}
-     */
-    load(id) {
-      if (id === resolvedVirtualModuleId) {
-        return `import { loadAnimations } from 'motion-lyte.js';\nloadAnimations();`;
-      }
-    },
-    /**
-     * 
-     * @param {string} html 
-     * @returns {string|undefined}
-     */
-    transformIndexHtml(html) {
-      return html.replace(
-        '</body>',
-        `  <script type="module" src="/@id/${virtualModuleId}"></script>\n</body>`
-      );
+      return null;
     }
   };
 }
