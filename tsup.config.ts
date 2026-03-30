@@ -4,6 +4,7 @@ export default defineConfig({
   entry: {
     index: 'animations/index.js',
     react: 'animations/react/index.js',
+    vite: 'animations/vite/index.js',
   },
   format: ['cjs', 'esm'],
   dts: true,

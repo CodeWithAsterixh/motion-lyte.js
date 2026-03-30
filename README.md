@@ -19,6 +19,18 @@ loadAnimations();
 ## 🛠️ Build for Production
 The library is optimized using `tsup` to provide minified ESM and CJS bundles. Only the necessary `dist` files are published to keep the package lightweight.
 
+### Vite Plugin
+To automatically initialize animations in a Vite project, use the official plugin:
+
+```javascript
+// vite.config.js
+import { motionLyte } from 'motion-lyte.js/vite';
+
+export default {
+  plugins: [motionLyte()]
+};
+```
+
 ## Features
 - **Modular Architecture**: Easy to extend with custom animations.
 - **Dynamic Prefixes**: No hardcoded class names; classes are derived from animation names.

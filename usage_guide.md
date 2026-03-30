@@ -14,6 +14,47 @@ Use these attributes to define which animation should play and what trigger shou
 
 ---
 
+## Usage Guide - Motion-Lyte.js
+
+## 📦 Installation
+
+```bash
+npm install motion-lyte.js
+```
+
+## 🚀 Basic Usage (Vanilla)
+
+```javascript
+import { loadAnimations } from 'motion-lyte.js';
+loadAnimations();
+```
+
+## ⚛️ React Integration
+
+Use the provided hook to handle lifecycle and cleanup automatically:
+
+```javascript
+import { useMotionLyte } from 'motion-lyte.js/react';
+
+function App() {
+  useMotionLyte(); // Initializes and cleans up animations
+  return <div data-hover-animation="underline_animation">...</div>;
+}
+```
+
+## ⚡ Vite Plugin
+
+Injects `loadAnimations()` automatically into your `index.html`:
+
+```javascript
+// vite.config.js
+import { motionLyte } from 'motion-lyte.js/vite';
+
+export default {
+  plugins: [motionLyte()]
+};
+```
+
 ## 2. Variable Attributes
 Variables are passed as JSON-like strings. Special characters like single quotes are automatically fixed by the framework.
 
