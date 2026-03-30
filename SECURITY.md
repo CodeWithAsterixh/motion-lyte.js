@@ -1,7 +1,7 @@
 # Security Policy
 
 ## Supported Versions
-Only the latest version of Motion-Lyte.js is currently supported for security updates.
+Only the latest version of Motion-Lyte-JS is currently supported for security updates.
 
 | Version | Supported          |
 | ------- | ------------------ |

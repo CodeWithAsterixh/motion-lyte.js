@@ -13,7 +13,7 @@ export function motionLyte() {
         // Only inject if it's not already there
         if (!code.includes('loadAnimations')) {
           return {
-            code: `import { loadAnimations } from 'motion-lyte.js';\nloadAnimations();\n${code}`,
+            code: `import { loadAnimations } from 'motion-lyte-js';\nloadAnimations();\n${code}`,
             map: null // We don't need a source map for this simple injection
           };
         }

@@ -1,17 +1,17 @@
-# Motion-Lyte.js
+# Motion-Lyte-JS
 
 A modular, readable, and maintainable animation framework for the web, designed for high-performance and zero-dependency (zero-config optional) usage.
 
 ## 📦 Installation
 
 ```bash
-npm install motion-lyte.js
+npm install motion-lyte-js
 ```
 
 ## 🚀 Quick Start
 
 ```javascript
-import { loadAnimations } from 'motion-lyte.js';
+import { loadAnimations } from 'motion-lyte-js';
 
 loadAnimations();
 ```
@@ -24,7 +24,7 @@ To automatically initialize animations in a Vite project, use the official plugi
 
 ```javascript
 // vite.config.js
-import { motionLyte } from 'motion-lyte.js/vite';
+import { motionLyte } from 'motion-lyte-js/vite';
 
 export default {
   plugins: [motionLyte()]
@@ -39,7 +39,7 @@ export default {
 - **Framework Agnostic**: Works with plain HTML, React, Vue, etc.
 
 ## Installation
-Simply copy the `motion-lyte.js` folder into your project.
+Simply copy the `motion-lyte-js` folder into your project.
 
 ## Usage
 
@@ -50,7 +50,7 @@ Simply copy the `motion-lyte.js` folder into your project.
 
 ### 2. Using the Factory (JS/React)
 ```javascript
-import { createAttributes } from 'motion-lyte.js';
+import { createAttributes } from 'motion-lyte-js';
 
 // Get attributes as an object
 const attrs = createAttributes({

@@ -10,7 +10,7 @@ import { loadAnimations } from '../index.js';
  * 
  * @example
  * ```jsx
- * import { useMotionLyte } from 'motion-lyte.js/react';
+ * import { useMotionLyte } from 'motion-lyte-js/react';
  * 
  * function App() {
  *   useMotionLyte();

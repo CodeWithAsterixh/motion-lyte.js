@@ -14,18 +14,18 @@ Use these attributes to define which animation should play and what trigger shou
 
 ---
 
-## Usage Guide - Motion-Lyte.js
+## Usage Guide - Motion-Lyte-JS
 
 ## 📦 Installation
 
 ```bash
-npm install motion-lyte.js
+npm install motion-lyte-js
 ```
 
 ## 🚀 Basic Usage (Vanilla)
 
 ```javascript
-import { loadAnimations } from 'motion-lyte.js';
+import { loadAnimations } from 'motion-lyte-js';
 loadAnimations();
 ```
 
@@ -34,7 +34,7 @@ loadAnimations();
 Use the provided hook to handle lifecycle and cleanup automatically:
 
 ```javascript
-import { useMotionLyte } from 'motion-lyte.js/react';
+import { useMotionLyte } from 'motion-lyte-js/react';
 
 function App() {
   useMotionLyte(); // Initializes and cleans up animations
@@ -48,7 +48,7 @@ Injects `loadAnimations()` automatically into your `index.html`:
 
 ```javascript
 // vite.config.js
-import { motionLyte } from 'motion-lyte.js/vite';
+import { motionLyte } from 'motion-lyte-js/vite';
 
 export default {
   plugins: [motionLyte()]

@@ -1,6 +1,6 @@
-# Contributing to Motion-Lyte.js
+# Contributing to Motion-Lyte-JS
 
-First off, thank you for considering contributing to Motion-Lyte.js! It's people like you that make the open-source community such an amazing place.
+First off, thank you for considering contributing to Motion-Lyte-JS! It's people like you that make the open-source community such an amazing place.
 
 ## How Can I Contribute?
 
