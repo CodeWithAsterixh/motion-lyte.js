@@ -2,7 +2,7 @@ import { getVariables } from './core/utils.js';
 import { runAnimation } from './core/runner.js';
 import { availableAnimations } from './registry.js';
 
-export { loadAnimations } from './runner.js';
+
 export { createAttributes } from './core/factory.js';
 
 /**
@@ -12,7 +12,7 @@ export { createAttributes } from './core/factory.js';
  * `data-toggle-animation`, and `data-scroll-animation` attributes 
  * and attaches the corresponding animation logic.
  * 
- * @returns {void}
+ * @returns {() => void} A cleanup function.
  */
 export function loadAnimations() {
   const animationStates = ["hover", "play", "toggle", "scroll"];
@@ -21,20 +21,24 @@ export function loadAnimations() {
     const stateElements = document.querySelectorAll(`[data-${state}-animation]`);
     
     stateElements.forEach((element) => {
-      const animationTypes = element
-        .getAttribute(`data-${state}-animation`)
+      if (!(element instanceof HTMLElement)) return;
+
+      const attrValue = element.getAttribute(`data-${state}-animation`);
+      if (!attrValue) return;
+
+      const animationTypes = attrValue
         .split(",")
         .map(s => s.trim())
         .filter(Boolean);
 
-      const animationVariables = getVariables(element, state);
+      const animationVariables = getVariables(element, /** @type {any} */ (state));
 
       animationTypes.forEach((type) => {
         const animationFunction = availableAnimations[type];
         if (animationFunction) {
           runAnimation(
             element,
-            state,
+            /** @type {any} */ (state),
             animationFunction,
             animationVariables,
             type,
@@ -45,4 +49,6 @@ export function loadAnimations() {
       });
     });
   });
+
+  return () => {};
 }

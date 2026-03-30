@@ -41,6 +41,7 @@
  * }, { targetElement: document.querySelector('.my-el') });
  */
 export function createAttributes(variables, config = {}) {
+  /** @type {Record<string, string>} */
   const attrs = {};
 
   const map = {
@@ -56,12 +57,12 @@ export function createAttributes(variables, config = {}) {
   };
 
   Object.entries(variables).forEach(([key, value]) => {
-    if (map[key]) {
-      const attrName = map[key];
-      
+    /** @type {string|undefined} */
+    const attrName = (/** @type {Record<string, string>} */ (map))[key];
+    if (attrName) {
       if (Array.isArray(value)) {
         attrs[attrName] = value.join(', ');
-      } else if (value !== null && typeof value === 'object') {
+      } else if (value && typeof value === 'object') {
         attrs[attrName] = JSON.stringify(value);
       } else if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean') {
         attrs[attrName] = String(value);
@@ -69,9 +70,10 @@ export function createAttributes(variables, config = {}) {
     }
   });
 
-  if (config.targetElement && config.targetElement instanceof HTMLElement) {
+  const target = config.targetElement;
+  if (target instanceof HTMLElement) {
     Object.entries(attrs).forEach(([key, value]) => {
-      config.targetElement.setAttribute(key, value);
+      target.setAttribute(key, value);
     });
   }
 

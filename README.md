@@ -1,6 +1,23 @@
 # Motion-Lyte.js
 
-A modular, readable, and maintainable animation framework for the web.
+A modular, readable, and maintainable animation framework for the web, designed for high-performance and zero-dependency (zero-config optional) usage.
+
+## 📦 Installation
+
+```bash
+npm install motion-lyte.js
+```
+
+## 🚀 Quick Start
+
+```javascript
+import { loadAnimations } from 'motion-lyte.js';
+
+loadAnimations();
+```
+
+## 🛠️ Build for Production
+The library is optimized using `tsup` to provide minified ESM and CJS bundles. Only the necessary `dist` files are published to keep the package lightweight.
 
 ## Features
 - **Modular Architecture**: Easy to extend with custom animations.
