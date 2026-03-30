@@ -1,0 +1,19 @@
+{
+  "name": "motion-lyte.js",
+  "version": "1.0.0",
+  "description": "A modular, readable, and maintainable animation framework for the web.",
+  "main": "animations/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "animation",
+    "js",
+    "framework",
+    "observer",
+    "scroll"
+  ],
+  "author": "CodeWithAsterixh",
+  "license": "MIT"
+}
