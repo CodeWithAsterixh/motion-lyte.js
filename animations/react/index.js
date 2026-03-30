@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { loadAnimations } from '../index.js';
 
 /**
- * React hook to initialize Motion-Lyte.js animations.
+ * React hook to initialize motion-lyte-js animations.
  * 
  * This hook ensures that loadAnimations is called once when the component mounts.
  * In a standard React application, this should typically be used in your top-level 
