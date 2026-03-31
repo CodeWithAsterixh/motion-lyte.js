@@ -1,6 +1,6 @@
 {
   "name": "motion-lyte-js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A modular, readable, and maintainable animation framework for the web.",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
