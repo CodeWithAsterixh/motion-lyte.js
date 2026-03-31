@@ -27,7 +27,7 @@ export function useIntersectionObserver(element, animationFunction, options = {}
     (entries) => {
       entries.forEach((entry) => {
         visibilityPercentage = entry.intersectionRatio * 100;
-        element.dataset["visibility-percent"] = visibilityPercentage.toFixed(2);
+        element.dataset.visibilityPercent = visibilityPercentage.toFixed(2);
         if (entry.isIntersecting) {
           animationFunction(element, "enter", config);
         } else {
@@ -43,7 +43,7 @@ export function useIntersectionObserver(element, animationFunction, options = {}
       root: config.root,
     },
   );
-  
+
 
   observer.observe(element);
   return visibilityPercentage;
