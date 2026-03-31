@@ -1,5 +1,6 @@
 {
     "html.customData": [
         ".vscode/animations.html-data.json"
-    ]
+    ],
+    "snyk.advanced.autoSelectOrganization": true
 }

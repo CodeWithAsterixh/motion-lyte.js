@@ -11,13 +11,6 @@ import { clsx_stringarray } from '../core/utils.js';
  * @param {HTMLElement} element - The trigger element.
  * @param {'enter'|'leave'} type - The animation phase.
  * @param {AnimationVariables} variables - Configuration variables.
- * @param {string} [variables.enterClass] - Class(es) to add on 'enter'.
- * @param {string} [variables.leaveClass] - Class(es) to add on 'leave'.
- * @param {string} [variables.scroll-enterClass] - Specific class(es) for scroll 'enter'.
- * @param {string} [variables.scroll-leaveClass] - Specific class(es) for scroll 'leave'.
- * @param {string} [variables.toggle-receiver-id] - ID of another element to toggle classes on.
- * @param {string} [variables.toggle-enterClass] - Class to add to receiver on 'enter'.
- * @param {string} [variables.toggle-leaveClass] - Class to add to receiver on 'leave'.
  * @param {string} [name='dynamic-toggle'] - The name of the animation.
  * @returns {void}
  */
@@ -52,10 +45,10 @@ export function dynamicToggle(element, type, variables, name = "dynamic_toggle")
 
     if (toggleReceiverElement) {
       if (type === "enter" && toggleShowClass) {
-        toggleReceiverElement.classList.remove(...clsx_stringarray([toggleRemoveClass, toggleShowClass]));
+        toggleReceiverElement.classList.remove(...clsx_stringarray([toggleRemoveClass||'', toggleShowClass]));
         toggleReceiverElement.classList.add(...clsx_stringarray(toggleShowClass));
       } else if (type === "leave" && toggleRemoveClass) {
-        toggleReceiverElement.classList.remove(...clsx_stringarray([toggleRemoveClass, toggleShowClass]));
+        toggleReceiverElement.classList.remove(...clsx_stringarray([toggleRemoveClass, toggleShowClass||'']));
         toggleReceiverElement.classList.add(...clsx_stringarray(toggleRemoveClass));
       }
     }
